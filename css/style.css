@@ -27,6 +27,9 @@ body {
   font-family: "Outfit", sans-serif;
   background-color: var(--bgColor);
   color: var(--whiteColor);
+}
+
+main {
   padding: var(--size-fluid-3) var(--size-fluid-3);
   display: grid;
   place-items: center;
@@ -54,9 +57,51 @@ img {
   gap: var(--size-fluid-2);
 }
 
-.card > img {
-  border-radius: var(--radius-2);
+.card__image--container:hover {
+  cursor: pointer;
+  background-color: var(--primaryCyan);
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
+.card__image--container {
+  border-radius: var(--radius-2);
+  position: relative;
+  inset: 0;
+}
+
+.card__image {
+  border-radius: var(--radius-2);
+  /* cursor: pointer; */
+}
+.card__image--container:hover .card__image {
+  opacity: 0.5;
+  position: relative;
+  background-color: var(--primaryCyan);
+}
+
+.card__image--container:hover .card__image--icon {
+  content: url("./images//icon-view.svg");
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  margin: 0 !important;
+  /* left: 46%; */
+}
+/* 
+.card__image::after {
+  content: "";
+  position: absolute;
+  background: var(--primaryCyan);
+  inset: 0;
+}
+
+.card__image:is(:hover) {
+  opacity: 1;
+} */
 
 .card_title:hover {
   color: var(--primaryCyan);
@@ -68,8 +113,9 @@ img {
   font-weight: 300;
 }
 
-.card hr {
+.card__separator {
   color: var(--lineColor);
+  border-top: var(--border-size-1) solid var(--lineColor);
 }
 
 .card__middle {
@@ -83,6 +129,14 @@ img {
   color: var(--primaryCyan);
 }
 
+.eth,
+.time {
+  font-size: var(--font-size-1);
+  display: flex;
+  align-items: center;
+  gap: var(--size-1);
+}
+
 .card__bottom {
   display: flex;
   align-items: center;
@@ -93,7 +147,7 @@ img {
   width: 30px;
   height: 30px;
   border-radius: var(--radius-round);
-  border: var(--border-size-1) solid var(--gray-1);
+  border: var(--border-size-1) solid var(--whiteColor);
 }
 
 .card__bottom .name {
