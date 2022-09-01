@@ -102,6 +102,10 @@ img {
 .card__image:is(:hover) {
   opacity: 1;
 } */
+.card_title {
+  font-weight: 600;
+  font-size: var(--font-size-4);
+}
 
 .card_title:hover {
   color: var(--primaryCyan);
