@@ -30,7 +30,7 @@ body {
 }
 
 main {
-  padding: var(--size-fluid-3) var(--size-fluid-3);
+  padding: var(--size-fluid-4);
   display: grid;
   place-items: center;
 }
